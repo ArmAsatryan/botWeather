@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="MyBot">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyBot</output-path>
+    <root id="root">
+      <element id="archive" name="MyBot.jar">
+        <element id="module-output" name="MyBot" />
+      </element>
+    </root>
+  </artifact>
+</component>
