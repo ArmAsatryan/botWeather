@@ -39,7 +39,7 @@ public class WeatherBot extends TelegramLongPollingBot {
             if (city != null) {
                 sendMsg(message, "<b>Այս պահին ջերմաստիճանը &#128205;" + city + "ում:" + getWeather(city) + "\n </b>");
             } else {
-                sendMsg(message, "<b> &#128205; Խնդրում եմ գրեք բնակավայրի անունը:\n</b>");
+                sendMsg(message, "<b> &#128205; Խնդրում եմ գրեք բնակավայրի անունը (Հայատառ):\n</b>");
             }
         }
     }
