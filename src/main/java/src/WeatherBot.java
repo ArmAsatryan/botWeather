@@ -4,7 +4,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.json.JSONObject;
-import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -12,6 +11,7 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,9 +21,8 @@ public class WeatherBot extends TelegramLongPollingBot {
     private static final String API_KEY = "caceda6ea68d92735ca56f94c619ece2";
 
     public static void main(String[] args) {
-        ApiContextInitializer.init();
-        TelegramBotsApi botsApi = new TelegramBotsApi();
         try {
+            TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
             botsApi.registerBot(new WeatherBot());
         } catch (TelegramApiException e) {
             e.printStackTrace();
