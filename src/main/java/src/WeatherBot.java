@@ -47,6 +47,8 @@ public class WeatherBot extends TelegramLongPollingBot {
         }
     }
 
+
+
     private void getUserInfo(Message message) {
         User user = message.getFrom();
         String lastName = user.getLastName();
