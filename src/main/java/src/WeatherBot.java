@@ -37,8 +37,12 @@ public class WeatherBot extends TelegramLongPollingBot {
             String city = getCity(text);
             if (city != null) {
                 sendMsg(message, "<b>Այս պահին ջերմաստիճանը &#128205;" + city + "ում:" + getWeather(city) + "\n </b>");
+                sendMsg(message, "<b>Температура в этот момент в&#128205;" + city  + getWeather(city) + "\n </b>");
+                sendMsg(message, "<b>The temperature at this moment at &#128205;" + city + "is:" + getWeather(city) + "\n </b>");
             } else {
-                sendMsg(message, "<b> &#128205; Խնդրում եմ գրեք բնակավայրի անունը (Հայատառ):\n</b>");
+                sendMsg(message, "<b> &#128205; Խնդրում եմ գրեք բնակավայրի անունը :\n</b>");
+                sendMsg(message, "<b> &#128205; Пожалуйста, напишите название места :\n</b>");
+                sendMsg(message, "<b> &#128205; Please write the name of the place :\n</b>");
             }
         }
     }
